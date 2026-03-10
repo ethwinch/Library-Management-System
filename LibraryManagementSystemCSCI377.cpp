@@ -1,10 +1,10 @@
 // Library Management System 
-// track borrowed books
-// have a waitlist for books
-// a member record
-// ability to search books by ISBN
-// ability to view all books in the catalog
-// ability to check out books
+    // track borrowed books
+    // have a waitlist for books
+    // a member record
+    // ability to search books by ISBN
+    // ability to view all books in the catalog
+    // ability to check out books
 
 // a queue for a waitlist for borrowing books that are currently unavailable
 // a map that can be searched using a string of the book’s ISBN to return the book data type
@@ -36,6 +36,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <queue>
 using namespace std;
 
 // Book Class
@@ -45,6 +46,8 @@ class Book{
         string title;
         string author;
         bool available;
+
+        queue<Member*> waitlist;
 
     public:
         // CONSTRUCTOR
@@ -85,6 +88,7 @@ class Book{
             return available;
         }
 
+        // FUNCTIONS
         void printBookDetails(Book& book){
             cout << book.getISBN() << endl; 
             cout << book.getTitle() << endl;
@@ -92,6 +96,28 @@ class Book{
             cout << book.getAvailability() << endl;
         }
 
+        void searchISBN(){
+            // search by ISBN
+        }
+
+        void checkout(Book& book, Member& member){
+            if (book.getAvailability() == true){
+                available = false;
+            }else{
+                cout << "This book is currently checked out. You are added to the queue." << endl;
+                waitlist.push(member); //idk man, it's late
+            }
+        }
+
+        void returnBook(Book& book, Member& member){
+            //book.getAvailability();
+            available = true;
+            borrowed.erase(find(borrowed.begin(), borrowed.end(), book));
+            
+            // if someone in waitlist, have them checkout book
+            // checkout(book, waitlist.front());
+            // waitlist.pop();
+        }
 };
 
 // Member Class
@@ -127,6 +153,7 @@ class Member{
 };
 
 
+// CREATE A LIST OF ALL BOOKS
 
 
 int main(){

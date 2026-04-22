@@ -1,0 +1,82 @@
+postgressql script
+
+CREATE DATABASE library;
+
+CREATE TABLE customers (
+    user_id SERIAL PRIMARY KEY,
+    fname VARCHAR(50) NOT NULL,
+    lname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE books (
+    book_id SERIAL PRIMARY KEY,
+    title VARCHAR(256) NOT NULL,
+    author VARCHAR(256),
+    isbn VARCHAR(13) UNIQUE,
+    quantity INT DEFAULT 0 CHECK (quantity >=0) 
+);
+
+CREATE TABLE transactions (
+    transaction_id SERIAL PRIMARY KEY,
+    customer_id INT NOT NULL,
+    book_id INT NOT NULL,
+    transaction_start_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    transaction_end_date TIMESTAMP,
+    FOREIGN KEY (customer_id) REFERENCES customers(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
+);
+
+
+--populating tables 
+
+-- Insert 10 customers
+INSERT INTO customers (fname, lname, email, password) VALUES
+('John', 'Doe', 'john.doe1@example.com', 'hashed_pw_1'),
+('Jane', 'Smith', 'jane.smith2@example.com', 'hashed_pw_2'),
+('Alice', 'Johnson', 'alice.johnson3@example.com', 'hashed_pw_3'),
+('Bob', 'Brown', 'bob.brown4@example.com', 'hashed_pw_4'),
+('Charlie', 'Davis', 'charlie.davis5@example.com', 'hashed_pw_5'),
+('Diana', 'Miller', 'diana.miller6@example.com', 'hashed_pw_6'),
+('Ethan', 'Wilson', 'ethan.wilson7@example.com', 'hashed_pw_7'),
+('Fiona', 'Moore', 'fiona.moore8@example.com', 'hashed_pw_8'),
+('George', 'Taylor', 'george.taylor9@example.com', 'hashed_pw_9'),
+('Hannah', 'Anderson', 'hannah.anderson10@example.com', 'hashed_pw_10');
+
+-- Insert 10 books
+INSERT INTO books (title, author, isbn, quantity) VALUES
+('The Great Adventure', 'A. Writer', '9780000000001', 5),
+('Mystery of the Night', 'B. Author', '9780000000002', 3),
+('Learning SQL', 'C. Coder', '9780000000003', 10),
+('Data Structures Simplified', 'D. Dev', '9780000000004', 7),
+('Web Development Basics', 'E. Engineer', '9780000000005', 6),
+('Advanced Algorithms', 'F. Scientist', '9780000000006', 4),
+('The Lost World', 'G. Explorer', '9780000000007', 2),
+('AI for Beginners', 'H. Innovator', '9780000000008', 8),
+('Cloud Computing Guide', 'I. Architect', '9780000000009', 9),
+('Cybersecurity Essentials', 'J. Hacker', '9780000000010', 5);
+
+-- Insert 20 transactions
+INSERT INTO transactions (customer_id, book_id, transaction_start_date, transaction_end_date) VALUES
+(1, 1, NOW() - INTERVAL '10 days', NOW() - INTERVAL '5 days'),
+(2, 2, NOW() - INTERVAL '9 days', NOW() - INTERVAL '4 days'),
+(3, 3, NOW() - INTERVAL '8 days', NOW() - INTERVAL '3 days'),
+(4, 4, NOW() - INTERVAL '7 days', NOW() - INTERVAL '2 days'),
+(5, 5, NOW() - INTERVAL '6 days', NOW() - INTERVAL '1 days'),
+(6, 6, NOW() - INTERVAL '5 days', NULL),
+(7, 7, NOW() - INTERVAL '4 days', NULL),
+(8, 8, NOW() - INTERVAL '3 days', NOW() - INTERVAL '1 days'),
+(9, 9, NOW() - INTERVAL '2 days', NULL),
+(10, 10, NOW() - INTERVAL '1 days', NULL),
+
+(1, 2, NOW() - INTERVAL '12 days', NOW() - INTERVAL '6 days'),
+(2, 3, NOW() - INTERVAL '11 days', NOW() - INTERVAL '5 days'),
+(3, 4, NOW() - INTERVAL '10 days', NOW() - INTERVAL '4 days'),
+(4, 5, NOW() - INTERVAL '9 days', NOW() - INTERVAL '3 days'),
+(5, 6, NOW() - INTERVAL '8 days', NOW() - INTERVAL '2 days'),
+(6, 7, NOW() - INTERVAL '7 days', NULL),
+(7, 8, NOW() - INTERVAL '6 days', NULL),
+(8, 9, NOW() - INTERVAL '5 days', NOW() - INTERVAL '2 days'),
+(9, 10, NOW() - INTERVAL '4 days', NULL),
+(10, 1, NOW() - INTERVAL '3 days', NULL);

@@ -39,7 +39,7 @@
 #include <queue>
 using namespace std;
 
-//#include "Member.h"
+#include "Member.h"
 #include "Book.h"
 
 // CREATE A LIST OF ALL BOOKS
@@ -49,7 +49,15 @@ int main(){
     b1.printBookDetails(b1);
 
     Member m1(123456);
-    m1.printMemberInfo(m1);
+    m1.printMemberInfo();
+
+    Member m2(100021);
+
+    b1.checkout(b1, m1);
+    b1.printBookDetails(b1);
+
+    b1.checkout(b1, m2);
+    b1.printBookDetails(b1);
 
     return 0;
 }

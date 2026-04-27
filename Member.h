@@ -1,13 +1,14 @@
 #ifndef MEMBER_H
 #define MEMBER_H
 
-// #include <iostream>
-// #include <string>
-// #include <vector>
-// #include <queue>
-// using namespace std;
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+#include <algorithm>
 
-#include "Book.h"
+//#include "Book.h"
+class Book;
 
 // Member Class
 class Member{
@@ -24,7 +25,7 @@ class Member{
         ~Member(){}
 
         // SETTER FUNCTIONS
-        void setID(){
+        void setID(int id){
             this->id = id;
         }
 
@@ -37,16 +38,19 @@ class Member{
             return borrowed;
         }
 
-        void printMemberInfo(Member& member){
-            cout << member.getID() << endl;
+        // void printMemberInfo(Member& member){
+        //     cout << member.getID() << endl;
+        // }
+        void printMemberInfo(){
+            cout << id << endl;
         }
 
         // HELPER FUNCTIONS
         void addBorrowedBook(Book* book){
-            borrowed.push_back(&book);
+            borrowed.push_back(book);
         }
         void removeBorrowedBook(Book* book){
-            borrowed.erase(find(borrowed.begin(), borrowed.end(), &book));
+            borrowed.erase(find(borrowed.begin(), borrowed.end(), book));
         }
 
         friend class Book;

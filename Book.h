@@ -7,7 +7,8 @@
 // #include <queue>
 // using namespace std;
 
-#include "Member.h"
+//#include "Member.h"
+class Member;
 
 // Book Class
 class Book{
@@ -31,16 +32,16 @@ class Book{
         ~Book(){}
 
         // SETTER FUNCTIONS
-        void setISBN(){
+        void setISBN(int isbn){
             this->ISBN = ISBN;
         }
-        void setTitle(){
+        void setTitle(string tit){
             this->title = title;
         }
-        void setAuthor(){
+        void setAuthor(string auth){
             this->author = author;
         }
-        void setAvailability(){
+        void setAvailability(bool ava){
             this->available = available;
         }
 
@@ -75,7 +76,7 @@ class Book{
                 available = false;
             }else{
                 cout << "This book is currently checked out. You are added to the queue." << endl;
-                waitlist.push_back(&member); //idk man, it's late
+                waitlist.push_back(&member); 
             }
         }
 
@@ -83,6 +84,12 @@ class Book{
             //book.getAvailability();
             available = true;
             member.removeBorrowedBook(&book);
+
+            if (waitlist.size() > 0){
+                Member *nextMember = waitlist.front();
+                book.checkout(nextMember);
+                // remove first member in waitlist
+            }
             
             // if someone in waitlist, have them checkout book
             // checkout(book, waitlist.front());

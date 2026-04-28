@@ -46,18 +46,22 @@ using namespace std;
 
 int main(){
     Book b1(123456789, "Percy Jackson & the Olympians", "Rick Riordan", true);
-    b1.printBookDetails(b1);
 
     Member m1(123456);
-    m1.printMemberInfo();
-
     Member m2(100021);
+    
+    //m1.printMemberInfo();
 
-    b1.checkout(b1, m1);
-    b1.printBookDetails(b1);
+    b1.printBookDetails();
 
-    b1.checkout(b1, m2);
-    b1.printBookDetails(b1);
+    b1.checkout(m1);
+    b1.printBookDetails();
+
+    b1.checkout(m2);
+    b1.printBookDetails();
+
+    b1.returnBook(m1);
+    b1.printBookDetails();
 
     return 0;
 }

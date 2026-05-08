@@ -1,21 +1,21 @@
 #ifndef BOOK_H
 #define BOOK_H
 
-// #include <iostream>
-// #include <string>
-// #include <vector>
+#include <iostream>
+#include <string>
+#include <vector>
 #include <queue>
-// using namespace std;
+#include "Member.h"
+using namespace std;
 
-//#include "Member.h"
 class Member;
 
 // Book Class
 class Book{
     private:
-        int ISBN;
+        long ISBN;
         string title;
-        string author;
+        //string author;
         bool available;
 
         queue<Member*> waitlist;
@@ -23,10 +23,10 @@ class Book{
 
     public:
         // CONSTRUCTOR
-        Book(int isbn, string tit, string auth, bool ava){
+        Book(long isbn, string tit, bool ava){
             ISBN = isbn;
             title = tit;
-            author = auth;
+            //author = auth;
             available = ava;
             currentHolder = nullptr;
         }
@@ -40,24 +40,28 @@ class Book{
         void setTitle(string tit){
             this->title = title;
         }
+        /*
         void setAuthor(string auth){
             this->author = author;
         }
+        */
         void setAvailability(bool ava){
             this->available = available;
         }
 
         // GETTER FUNCTIONS
-        int getISBN(){
+        long getISBN() const{
             return ISBN;
         }
-        string getTitle(){
+        string getTitle()const{
             return title;
         }
+        /*
         string getAuthor(){
             return author;
         }
-        bool getAvailability(){
+        */
+        bool getAvailability()const{
             return available;
         }
 
@@ -65,7 +69,7 @@ class Book{
         void printBookDetails(){
             cout << this->getISBN() << endl; 
             cout << this->getTitle() << endl;
-            cout << this->getAuthor() << endl;
+            //cout << this->getAuthor() << endl;
             cout << this->getAvailability() << endl;
 
             if (currentHolder) {

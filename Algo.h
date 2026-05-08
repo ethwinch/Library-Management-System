@@ -30,26 +30,19 @@ void print_out(const std::vector<Book>& library)
 
 //linear search algo
 //set target to vector.size() for worse case, 0 for best case, rand_num_gen(books.size()) for random number
-void linear_search_algo(const std::vector<Book>& library, long target)
+std::chrono::nanoseconds linear_search_algo(const std::vector<Book>& library, long target)
 {
    std::size_t counter = 0;
-   std::cout << "Start of linear search" << std::endl;
+//   std::cout << "Start of linear search" << std::endl;
    auto start = std::chrono ::steady_clock::now();
    while(counter < library.size() && library[counter].getISBN() != target)
    {
       counter++;
    }
    auto end = std::chrono ::steady_clock::now();
-   std::cout << "End of linear search" << std::endl;
-   auto duration =std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-   if(counter < library.size())
-   {
-      std::cout << "ISBN: " << target <<  " found after nanoseconds " << duration.count() << " via linear search."<< std::endl;
-   }
-   else
-   {
-      std::cout << "ISBN: " << target << " cannot be found (linear search)." << std::endl;
-   }
+//   std::cout << "End of linear search" << std::endl;
+   auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+   return duration;
 }
 //end of linear search algo
 
@@ -97,7 +90,7 @@ void binary_search_algo(const std::vector<Book>& library, long long target)
         std::cout << "ISBN: " << target << " cannot be found (binary search)." << std::endl;
     }
 }
-void binary_search_algo(std::vector<Book>& library, long target)
+std::chrono::nanoseconds binary_search_algo(std::vector<Book>& library, long target)
 {
    long low = 0;
    long high = library.size()-1;
@@ -120,7 +113,7 @@ void binary_search_algo(std::vector<Book>& library, long target)
    }
    auto end = std::chrono ::steady_clock::now();
    auto duration =std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
-   std::cout << "ISBN: " << target <<  " found after nanoseconds " << duration.count() << " via binary search."<< std::endl;
+   return duration;
 }
 //end of binary search algo
 

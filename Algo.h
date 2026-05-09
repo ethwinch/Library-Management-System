@@ -197,7 +197,14 @@ void mergeSort(std::vector<Book>& books, long left, long right)
 //start of quicksort algo 
 long partition(std::vector<Book>& books, long low, long high)
 {
-    long pivot = low + rand() % (high - low + 1);//books[high].getISBN();
+    // choose random pivot
+    long pivotIndex = low + rand() % (high - low + 1);
+
+    // move pivot to end
+    std::swap(books[pivotIndex], books[high]);
+
+    long pivot = books[high].getISBN();
+
     long i = low - 1;
 
     for(long j = low; j < high; j++)
@@ -205,11 +212,12 @@ long partition(std::vector<Book>& books, long low, long high)
         if(books[j].getISBN() <= pivot)
         {
             i++;
-            std::swap(books[pivot], books[high]);
+            std::swap(books[i], books[j]);
         }
     }
 
     std::swap(books[i + 1], books[high]);
+
     return i + 1;
 }
 

@@ -143,8 +143,8 @@ Binary Search/Sort: Fast ISBN lookup, even on large datasets. It has a more comp
 
 Linear Search/Sort: For ISBN lookup. It works fine on small datasets, but the seconds add up on data sets with more data to search through. Trades speed for simplicity.
 
-Merge Sort: ______
+Merge Sort: Attributed as a good stable choice for large datasets. It was chosen as it was considered O * log n in all cases but at the cost of a costly copying process depending on the data that is manipulated.
 
-Quick Sort: ______
+Quick Sort: Also considered a great but less stable option for large datasets. Due to the potential possibility of a bad pivot it can lead to a larger worse case situation but it does have less copy actions initiated. 
 
 #### Project Report (in /docs)

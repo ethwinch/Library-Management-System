@@ -9,9 +9,10 @@ While experimenting, we found binary search and sort to be the fastest while lin
 Ethan Winch, Shalin Valerio
 
 #### Programming Language: C++
-#### Libraries/Dependencies: ___
+#### Libraries/Dependencies: vector library, chrono library (for timing algorithms)
 
 ### How to Run/Compile
+To run the program............
 
 ### Sample Input/Output:
 #### Linear Search Benchmark

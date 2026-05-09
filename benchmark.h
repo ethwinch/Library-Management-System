@@ -339,6 +339,7 @@ void merge_sort_benchmark()
    csv_loader(books_100000, 100000);
    csv_loader(books_1000000, 1000000);
    
+   std::vector<Book> test;
    std::chrono::nanoseconds duration_100_1, duration_100_2, duration_100_3;
    std::chrono::nanoseconds duration_1000_1, duration_1000_2, duration_1000_3;
    std::chrono::nanoseconds duration_10000_1, duration_10000_2, duration_10000_3;
@@ -352,24 +353,27 @@ void merge_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_100;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_100, 0, books_100.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_100;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_100, 0, books_100.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_100;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_100, 0, books_100.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
@@ -391,26 +395,29 @@ void merge_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_1000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_1000, 0, books_1000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_1000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_1000, 0, books_1000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_1000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_1000, 0, books_1000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
-            duration_100_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+            duration_1000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
       }
@@ -431,24 +438,27 @@ void merge_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_10000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_10000, 0, books_10000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_10000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_10000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_10000, 0, books_10000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_10000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_10000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_10000, 0, books_10000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_10000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
@@ -470,24 +480,27 @@ void merge_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_100000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_100000, 0, books_100000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_100000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_100000, 0, books_100000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_100000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_10000, 0, books_10000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
@@ -509,24 +522,27 @@ void merge_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_1000000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_1000000, 0, books_1000000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_1000000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_1000000, 0, books_1000000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_1000000;
             auto start = std::chrono::steady_clock::now();
-            mergeSort(books_1000000, 0, books_1000000.size() - 1);
+            mergeSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
@@ -571,24 +587,27 @@ void quick_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_100;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_100, 0, books_100.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_100;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_100, 0, books_100.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_100;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_100, 0, books_100.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
@@ -610,26 +629,29 @@ void quick_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_1000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_1000, 0, books_1000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_1000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_1000, 0, books_1000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_1000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_1000, 0, books_1000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
-            duration_100_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
+            duration_1000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
       }
@@ -650,24 +672,27 @@ void quick_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_10000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_10000, 0, books_10000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_10000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_10000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_10000, 0, books_10000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_10000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_10000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_10000, 0, books_10000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_10000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
@@ -689,24 +714,27 @@ void quick_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_100000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_100000, 0, books_100000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_100000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_100000, 0, books_100000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_100000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_10000, 0, books_10000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_100000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
@@ -728,24 +756,27 @@ void quick_sort_benchmark()
       {
          case 0:
          {
+            std::vector<Book> test = books_1000000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_1000000, 0, books_1000000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000000_1 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 1:
          {
+            std::vector<Book> test = books_1000000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_1000000, 0, books_1000000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000000_2 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;
          }
          case 2:
          {
+            std::vector<Book> test = books_1000000;
             auto start = std::chrono::steady_clock::now();
-            quickSort(books_1000000, 0, books_1000000.size() - 1);
+            quickSort(test, 0, test.size() - 1);
             auto end = std::chrono::steady_clock::now();
             duration_1000000_3 = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
             break;

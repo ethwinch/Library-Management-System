@@ -15,14 +15,12 @@ Download the files and run in a C++ development environment such as VS Code or G
 To get the time complexity benchmarks, run from the "benchmark.cpp" file.
 To add books/members and use the return, borrow, and display details functions part of the Book and Member classes, run the "main.cpp" file or include the Book.h and Member.h files in the file you want to run. 
 
-##### Create a Book/Member Object:
-<br />
+#### Create a Book/Member Object:
 Book book_name("ISBN #","Book Title",true); // true means the book is available
 <br />
 Member member_name(int member ID);
 <br />
-##### Functions:
-<br />
+#### Functions:
 book.printBookDetails(); // prints book details
 <br />
 book.checkout(member); // have member checkout book

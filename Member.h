@@ -17,9 +17,14 @@ class Member{
         vector<Book*> borrowed;
 
     public:
+        // DEFAULT CONSTRUCTOR
+        // Member(){
+        //     id = NULL;
+        // }
         // CONSTRUCTOR
         Member(int ID){
             id = ID;
+            // members.push_back(this);
         }
         // DECONSTRUCTOR
         ~Member(){}

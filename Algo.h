@@ -122,6 +122,31 @@ void binary_search_algo(std::vector<Book>& library, long target)
    auto duration =std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
    std::cout << "ISBN: " << target <<  " found after nanoseconds " << duration.count() << " via binary search."<< std::endl;
 }
+
+// For returning ISBN in main.cpp
+long binary_search(std::vector<Book>& library, long target)
+{
+   long low = 0;
+   long high = library.size()-1;
+
+   while(low <= high)
+   {
+      long middle = low + (high - low) / 2;
+      if(target == library[middle].getISBN())
+      {
+        return middle;
+        //break;
+      }
+      if(target > library[middle].getISBN())
+      {
+         low = middle + 1;
+      }
+      else
+      {
+         high = middle -1;
+      }
+   }
+}
 //end of binary search algo
 
 //start of merge sort algo

@@ -8,7 +8,7 @@ While experimenting, we found binary search and sort to be the fastest while lin
 Ethan Winch, Shalin Valerio
 
 #### Programming Language: C++
-#### Libraries/Dependencies: vector library, chrono library (for timing algorithms)
+#### Libraries/Dependencies: vector library, chrono library (for timing algorithms), <fstream>, & <sstream>
 
 ### How to Run/Compile
 Download the files and run in a C++ development environment such as VS Code or Genie. 

@@ -50,7 +50,10 @@ class Member{
             borrowed.push_back(book);
         }
         void removeBorrowedBook(Book* book){
-            borrowed.erase(find(borrowed.begin(), borrowed.end(), book));
+            auto it = find(borrowed.begin(), borrowed.end(), book);
+            if (it != borrowed.end()) {
+                borrowed.erase(it);
+            }
         }
 
         friend class Book;

@@ -146,6 +146,7 @@ long binary_search(std::vector<Book>& library, long target)
          high = middle -1;
       }
    }
+   return 0;
 }
 //end of binary search algo
 

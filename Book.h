@@ -88,6 +88,7 @@ class Book{
                 available = false;
                 currentHolder = &member;
                 member.addBorrowedBook(this);
+                cout << "This book is sucessfully checked out.\n" << endl;
             }else{
                 cout << "This book is currently checked out. You are added to the queue.\n" << endl;
                 waitlist.push(&member); 
@@ -108,6 +109,7 @@ class Book{
                 available = false;
                 currentHolder = nextMember;
                 nextMember->addBorrowedBook(this);
+                cout << "This book is sucessfully returned.\n" << endl;
             }else{
                 currentHolder = nullptr;
                 available = true;

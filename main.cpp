@@ -45,7 +45,7 @@ int main(){
     members.push_back(m1);
     members.push_back(m2);
     std::vector<Book> books;
-    csv_loader(books);
+    csv_loader(books, 1000000);
 
     int select = 0;
 

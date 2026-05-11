@@ -32,22 +32,20 @@
 #include <string>
 #include <vector>
 #include <queue>
-//using namespace std;
-
 #include "Member.h"
 #include "Book.h"
 #include "Algo.h"
-#include "benchmark.cpp"
-// #include "loader.h"
+#include "loader.h"
 
 // CREATE A LIST OF ALL BOOKS
-
 int main(){
-    vector<Member> members;
+    std::vector<Member> members;
     Member m1(123456);
     Member m2(100021);
     members.push_back(m1);
     members.push_back(m2);
+    std::vector<Book> books;
+    csv_loader(books);
 
     int select = 0;
 
@@ -79,7 +77,7 @@ int main(){
 
             // BINARY SEARCH FUNCTION
             // return book obj
-            long book_index = binary_search(vector<Book>& books, search);
+            long book_index = binary_search(books, search);
 
             std::cout << "Book with ISBN " << search << " found at index " << book_index << ". " << endl;
 
@@ -105,9 +103,9 @@ int main(){
             }
 
             if (ans == 0){
-                // books[book_index].checkout(m);
+                books[book_index].checkout(m2);
             } else if (ans == 1){
-                // books[book_index].return(m);
+                books[book_index].returnBook(m2);
             }
         }
     }
@@ -115,7 +113,6 @@ int main(){
     //Book b1(123456789, "Percy Jackson & the Olympians", "Rick Riordan", true);
 
     // LOAD BOOKS
-    std::vector<Book> books;
     //csv_loader(books);
 
     // Member m1(123456);
@@ -136,3 +133,4 @@ int main(){
 
     return 0;
 }
+

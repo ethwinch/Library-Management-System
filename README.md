@@ -11,7 +11,7 @@ Ethan Winch, Shalin Valerio
 #### Libraries/Dependencies: vector library, chrono library (for timing algorithms), fstream, & sstream
 
 ### How to Run/Compile
-Download the GitHub files as well as the book data set from Kaggle at https://www.kaggle.com/datasets/goulvenfuret/books-dataset-isbn-based and run in a C++ development environment such as VS Code or Genie. Be sure to install all libraries/dependencies. 
+Download the GitHub files as well as the book data set from Kaggle at https://www.kaggle.com/datasets/goulvenfuret/books-dataset-isbn-based and run in a C++ development environment such as VS Code or Genie. Be sure to install all libraries/dependencies. The CSV file should be added to the root of the project folder and renamed to "output.csv", OR update the file path in "loader.h" on line 14 where it says "file.open("output.csv");". Replace "output.csv" with the file path.
 
 To get the time complexity benchmarks, run from the "benchmark.cpp" file.
 To add books/members and use the return, borrow, and display details functions part of the Book and Member classes, run the "main.cpp" file or include the Book.h and Member.h files in the file you want to run. 
